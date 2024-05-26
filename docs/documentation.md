@@ -2,7 +2,7 @@
 
 A user guide.
 
-## `config.engines.grpc`
+## `config.engines.grpc-alt`
 
 ### Full Example
 
@@ -30,7 +30,7 @@ config:
         "user-id": u123
 ```
 
-### `config.engines.grpc.protobufDefinition` (required)
+### `config.engines.grpc-alt.protobufDefinition` (required)
 
 You should define a single `.proto` file with its package and service.
 
@@ -59,7 +59,7 @@ config:
         service: HelloService
 ```
 
-### `config.engines.grpc.channelOpts` (optional)
+### `config.engines.grpc-alt.channelOpts` (optional)
 
 You can set [grpc-ChannelOptions](https://grpc.github.io/grpc/node/grpc.Channel.html).
 
@@ -73,7 +73,7 @@ config:
         grpc.client_idle_timeout_ms: 1000
 ```
 
-### `config.engines.grpc.metadata` (optional)
+### `config.engines.grpc-alt.metadata` (optional)
 
 You can set [Metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md) for all gRPC request.
 
@@ -85,7 +85,7 @@ config:
         "user-id": u123
 ```
 
-### `config.engines.grpc.protoLoaderConfig` (optional)
+### `config.engines.grpc-alt.protoLoaderConfig` (optional)
 
 artillery-engine-grpc use [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader) for loading .proto files. You can pass its configuration via `protoLoaderConfig` attributes.
 

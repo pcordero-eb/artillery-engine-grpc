@@ -54,7 +54,7 @@ ArtilleryGRPCEngine.prototype.loadServiceClient = function () {
 }
 
 /**
- * Load test YAML configuration defined at: <config.engines.grpc>
+ * Load test YAML configuration defined at: <config.engines.grpc-alt>
  */
 ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
   const {
@@ -62,7 +62,7 @@ ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
     protobufDefinition,
     protoLoaderConfig,
     metadata,
-  } = this.script.config.engines.grpc
+  } = this.script.config.engines['grpc-alt']
 
   return {
     channelOpts,
@@ -118,20 +118,20 @@ ArtilleryGRPCEngine.prototype.step = function step(ops, ee, scenarioSpec) {
   const startedAt = process.hrtime()
 
   function recordMetrics(startedAt, error, response) {
-    ee.emit('counter', 'engine.grpc.responses.total', 1)
+    ee.emit('counter', 'engine.grpc-alt.responses.total', 1)
     if (error) {
-      ee.emit('counter', 'engine.grpc.responses.error', 1)
-      ee.emit('counter', 'engine.grpc.codes.' + error.code, 1);
+      ee.emit('counter', 'engine.grpc-alt.responses.error', 1)
+      ee.emit('counter', 'engine.grpc-alt.codes.' + error.code, 1);
     } else {
-      ee.emit('counter', 'engine.grpc.responses.success', 1)
-      ee.emit('counter', 'engine.grpc.codes.' + grpc.status.OK, 1);
+      ee.emit('counter', 'engine.grpc-alt.responses.success', 1)
+      ee.emit('counter', 'engine.grpc-alt.codes.' + grpc.status.OK, 1);
     }
 
     /** @doc https://nodejs.org/api/process.html#process_process_hrtime_time */
     const [diffSec, diffNanosec] = process.hrtime(startedAt)
     const deltaNanosec = (diffSec * 1e9) + diffNanosec // NOTE: 1e9 means 1 * 10 to the 9th power, which is 1 billion (1000000000).
     const deltaMillisec = deltaNanosec / 1e6 // NOTE: 1e6 means 1 * 10 to the 6th power, which is 1 million (1000000).
-    ee.emit('histogram', 'engine.grpc.response_time', deltaMillisec)
+    ee.emit('histogram', 'engine.grpc-alt.response_time', deltaMillisec)
   }
 
   function beforeRequestHook(context, config, scenarioSpec) {
