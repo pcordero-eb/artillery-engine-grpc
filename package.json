@@ -1,6 +1,6 @@
 {
-  "name": "artillery-engine-grpc",
-  "version": "0.0.9",
+  "name": "artillery-engine-grpc-alt",
+  "version": "0.1.0",
   "description": "Load test your gRPC application with Artillery.io",
   "main": "index.js",
   "scripts": {
@@ -8,22 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kenju/artillery-engine-grpc.git"
+    "url": "git+ssh://git@github.com/seoulisnofun/artillery-engine-grpc.git"
   },
   "keywords": [
     "artillery",
     "grpc"
   ],
-  "author": "kenju",
+  "author": "seoulisnofun",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/kenju/artillery-engine-grpc/issues"
+    "url": "https://github.com/seoulisnofun/artillery-engine-grpc/issues"
   },
-  "homepage": "https://github.com/kenju/artillery-engine-grpc#readme",
+  "homepage": "https://github.com/seoulisnofun/artillery-engine-grpc#readme",
   "dependencies": {
     "@grpc/proto-loader": "^0.6.0",
+    "@grpc/grpc-js": "^1.8.9",
     "async": "^3.2.0",
-    "debug": "^4.1.1",
-    "grpc": "^1.24.2"
+    "debug": "^4.1.1"
   }
 }

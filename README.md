@@ -1,6 +1,6 @@
 # artillery-engine-grpc
 
-[![npm version](https://badge.fury.io/js/artillery-engine-grpc.svg)](https://badge.fury.io/js/artillery-engine-grpc) ![Publish Node.js Package](https://github.com/kenju/artillery-engine-grpc/workflows/Publish%20Node.js%20Package/badge.svg)
+> This is a forked and fixed version of [kenju/artillery-engine-grpc](https://github.com/seoulisnofun/artillery-engine-grpc)  which no longer appears to be maintained
 
 Load test gRPC application with [Artillery.io](https://artillery.io/)
 
