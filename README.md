@@ -1,6 +1,8 @@
 # artillery-engine-grpc
 
-> This is a forked and fixed version of [kenju/artillery-engine-grpc](https://github.com/seoulisnofun/artillery-engine-grpc)  which no longer appears to be maintained
+> This is a forked and fixed version of [kenju/artillery-engine-grpc](https://github.com/seoulisnofun/artillery-engine-grpc)  which no longer appears to be maintained  
+> Additionally, `enableTls` config is supported
+
 
 Load test gRPC application with [Artillery.io](https://artillery.io/)
 
@@ -74,6 +76,7 @@ config:
         objects: false
         oneofs: true
         includeDirs: []
+      enableTls: false
       metadata:
         "user-id": u123
 

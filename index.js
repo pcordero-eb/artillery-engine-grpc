@@ -62,6 +62,7 @@ ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
     protobufDefinition,
     protoLoaderConfig,
     metadata,
+    enableTls = false,
   } = this.script.config.engines['grpc-alt']
 
   return {
@@ -69,11 +70,12 @@ ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
     protobufDefinition,
     protoLoaderConfig,
     metadata,
+    enableTls: !!enableTls,
   }
 }
 
 ArtilleryGRPCEngine.prototype.initGRPCClient = function (target) {
-  const { channelOpts } = this.getEngineConfig()
+  const { channelOpts, enableTls } = this.getEngineConfig()
   /**
    * Filter out invalid channelOpts for gRPC client.
    * Channel third argument must be "an object with string keys and integer or string values"
@@ -86,7 +88,10 @@ ArtilleryGRPCEngine.prototype.initGRPCClient = function (target) {
     }
     return acc
   }, {})
-  return new this.serviceClient(target, grpc.credentials.createInsecure(), opts)
+
+  const channelCredentials = enableTls ? grpc.credentials.createSsl() : grpc.credentials.createInsecure()
+
+  return new this.serviceClient(target, channelCredentials, opts)
 }
 
 ArtilleryGRPCEngine.prototype.createScenario = function (scenarioSpec, ee) {
