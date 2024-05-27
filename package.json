@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/seoulisnofun/artillery-engine-grpc.git"
+    "url": "git+ssh://git@github.com/seoulisnofun/artillery-engine-grpc-alt.git"
   },
   "keywords": [
     "artillery",
@@ -17,9 +17,9 @@
   "author": "seoulisnofun",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/seoulisnofun/artillery-engine-grpc/issues"
+    "url": "https://github.com/seoulisnofun/artillery-engine-grpc-alt/issues"
   },
-  "homepage": "https://github.com/seoulisnofun/artillery-engine-grpc#readme",
+  "homepage": "https://github.com/seoulisnofun/artillery-engine-grpc-alt#readme",
   "dependencies": {
     "@grpc/proto-loader": "^0.6.0",
     "@grpc/grpc-js": "^1.8.9",

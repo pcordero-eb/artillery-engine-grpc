@@ -9,7 +9,7 @@ A user guide.
 ```yaml
 config:
   engines:
-    grpc:
+    grpc-alt:
       channelOpts:
         grpc.client_idle_timeout_ms: 1000
       protobufDefinition:
@@ -51,7 +51,7 @@ service HelloService {
 ```yaml
 config:
   engines:
-    grpc:
+    grpc-alt:
       # specify .proto file basic information
       protobufDefinition:
         filepath: protobuf-definitions/backend/services/v1/hello.proto
@@ -68,7 +68,7 @@ The available options are listed at https://grpc.github.io/grpc/core/group__grpc
 ```yaml
 config:
   engines:
-    grpc:
+    grpc-alt:
       channelOpts:
         grpc.client_idle_timeout_ms: 1000
 ```
@@ -80,21 +80,21 @@ You can set [Metadata](https://github.com/grpc/grpc-go/blob/master/Documentation
 ```yaml
 config:
   engines:
-    grpc:
+    grpc-alt:
       metadata:
         "user-id": u123
 ```
 
 ### `config.engines.grpc-alt.protoLoaderConfig` (optional)
 
-artillery-engine-grpc use [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader) for loading .proto files. You can pass its configuration via `protoLoaderConfig` attributes.
+artillery-engine-grpc-alt use [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader) for loading .proto files. You can pass its configuration via `protoLoaderConfig` attributes.
 
 The default values will depend on @grpc/proto-loader's default values.
 
 ```yaml
 config:
   engines:
-    grpc:
+    grpc-alt:
       protoLoaderConfig:
         keepCase: true
         longs: String
