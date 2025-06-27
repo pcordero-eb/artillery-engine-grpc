@@ -2,14 +2,14 @@
 
 A user guide.
 
-## `config.engines.grpc-alt`
+## `config.engines.grpc-eb`
 
 ### Full Example
 
 ```yaml
 config:
   engines:
-    grpc-alt:
+    grpc-eb:
       channelOpts:
         grpc.client_idle_timeout_ms: 1000
       protobufDefinition:
@@ -30,7 +30,7 @@ config:
         "user-id": u123
 ```
 
-### `config.engines.grpc-alt.protobufDefinition` (required)
+### `config.engines.grpc-eb.protobufDefinition` (required)
 
 You should define a single `.proto` file with its package and service.
 
@@ -51,7 +51,7 @@ service HelloService {
 ```yaml
 config:
   engines:
-    grpc-alt:
+    grpc-eb:
       # specify .proto file basic information
       protobufDefinition:
         filepath: protobuf-definitions/backend/services/v1/hello.proto
@@ -59,7 +59,7 @@ config:
         service: HelloService
 ```
 
-### `config.engines.grpc-alt.channelOpts` (optional)
+### `config.engines.grpc-eb.channelOpts` (optional)
 
 You can set [grpc-ChannelOptions](https://grpc.github.io/grpc/node/grpc.Channel.html).
 
@@ -68,33 +68,33 @@ The available options are listed at https://grpc.github.io/grpc/core/group__grpc
 ```yaml
 config:
   engines:
-    grpc-alt:
+    grpc-eb:
       channelOpts:
         grpc.client_idle_timeout_ms: 1000
 ```
 
-### `config.engines.grpc-alt.metadata` (optional)
+### `config.engines.grpc-eb.metadata` (optional)
 
 You can set [Metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md) for all gRPC request.
 
 ```yaml
 config:
   engines:
-    grpc-alt:
+    grpc-eb:
       metadata:
         "user-id": u123
 ```
 
-### `config.engines.grpc-alt.protoLoaderConfig` (optional)
+### `config.engines.grpc-eb.protoLoaderConfig` (optional)
 
-artillery-engine-grpc-alt use [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader) for loading .proto files. You can pass its configuration via `protoLoaderConfig` attributes.
+artillery-engine-grpc-eb use [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader) for loading .proto files. You can pass its configuration via `protoLoaderConfig` attributes.
 
 The default values will depend on @grpc/proto-loader's default values.
 
 ```yaml
 config:
   engines:
-    grpc-alt:
+    grpc-eb:
       protoLoaderConfig:
         keepCase: true
         longs: String

@@ -1,4 +1,4 @@
-# artillery-engine-grpc-alt
+# artillery-engine-grpc-eb
 
 > This is a forked and fixed version of [kenju/artillery-engine-grpc](https://github.com/seoulisnofun/artillery-engine-grpc)  which no longer appears to be maintained  
 > Additionally, `enableTls` config is supported
@@ -22,7 +22,7 @@ For developers:
 
 ```sh
 # if `artillery` is installed globally
-npm install -g artillery-engine-grpc-alt
+npm install -g artillery-engine-grpc-eb
 ```
 
 ### Define your scenario
@@ -59,7 +59,7 @@ config:
       arrivalRate: 10
       pause: 15
   engines:
-    grpc-alt:
+    grpc-eb:
       channelOpts:
         grpc.client_idle_timeout_ms: 1000
       protobufDefinition:
@@ -82,7 +82,7 @@ config:
 
 scenarios:
   - name: test backend-service running at http://localhost:8000
-    engine: grpc-alt
+    engine: grpc-eb
     flow:
     # list RPC names with its arguments
     - Hello:

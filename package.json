@@ -1,5 +1,5 @@
 {
-  "name": "artillery-engine-grpc-alt",
+  "name": "artillery-engine-grpc-eb",
   "version": "0.2.0",
   "description": "Load test your gRPC application with Artillery.io",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pcordero-eb/artillery-engine-grpc-alt.git"
+    "url": "https://github.com/pcordero-eb/artillery-engine-grpc-eb.git"
   },
   "keywords": [
     "artillery",
@@ -17,9 +17,9 @@
   "author": "pcordero-eb",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/pcordero-eb/artillery-engine-grpc-alt/issues"
+    "url": "https://github.com/pcordero-eb/artillery-engine-grpc-eb/issues"
   },
-  "homepage": "https://github.com/pcordero-eb/artillery-engine-grpc-alt#readme",
+  "homepage": "https://github.com/pcordero-eb/artillery-engine-grpc-eb#readme",
   "dependencies": {
     "@grpc/grpc-js": "^1.12.0",
     "@grpc/proto-loader": "^0.6.0",

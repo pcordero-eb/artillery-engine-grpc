@@ -1,19 +1,19 @@
-# artillery-engine-grpc-alt sample
+# artillery-engine-grpc-eb sample
 
 ## Usage
 
 ### Setup
 
-Link `artillery-engine-grpc-alt` for this sample repository's package.json using [`npm link`](https://docs.npmjs.com/cli/link.html)
+Link `artillery-engine-grpc-eb` for this sample repository's package.json using [`npm link`](https://docs.npmjs.com/cli/link.html)
 
 ```
 # create symlink at first
-cd artillery-engine-grpc-alt/
+cd artillery-engine-grpc-eb/
 npm link
 
 # link created symlink to this sample repository
 cd sample/
-npm link artillery-engine-grpc-alt
+npm link artillery-engine-grpc-eb
 ```
 
 ### Load Test
