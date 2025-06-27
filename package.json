@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/seoulisnofun/artillery-engine-grpc-alt#readme",
   "dependencies": {
+    "@grpc/grpc-js": "^1.12.0",
     "@grpc/proto-loader": "^0.6.0",
-    "@grpc/grpc-js": "^1.8.9",
     "async": "^3.2.0",
     "debug": "^4.1.1"
   }
