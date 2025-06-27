@@ -31,6 +31,8 @@ config:
         oneofs: true
         includeDirs: [ './protobuf-definitions' ]
       enableTls: false
+      # Set to true if your server uses self-signed certificates
+      # skipCertificateVerification: true
       metadata:
         "user-id": u123
 
