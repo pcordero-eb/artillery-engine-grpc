@@ -63,7 +63,7 @@ ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
     protoLoaderConfig,
     metadata,
     enableTls = false,
-    skipCertificateVerification = false,
+    rejectUnauthorized = false,
   } = this.script.config.engines['grpc-alt']
 
   return {
@@ -72,12 +72,12 @@ ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
     protoLoaderConfig,
     metadata,
     enableTls: !!enableTls,
-    skipCertificateVerification: !!skipCertificateVerification,
+    rejectUnauthorized: !!rejectUnauthorized,
   }
 }
 
 ArtilleryGRPCEngine.prototype.initGRPCClient = function (target) {
-  const { channelOpts, enableTls, skipCertificateVerification } = this.getEngineConfig()
+  const { channelOpts, enableTls, rejectUnauthorized } = this.getEngineConfig()
   /**
    * Filter out invalid channelOpts for gRPC client.
    * Channel third argument must be "an object with string keys and integer or string values"
@@ -91,23 +91,9 @@ ArtilleryGRPCEngine.prototype.initGRPCClient = function (target) {
     return acc
   }, {})
 
-  let channelCredentials
-  if (enableTls) {
-    if (skipCertificateVerification) {
-      // For self-signed certificates or when you want to skip verification
-      channelCredentials = grpc.credentials.createSsl(
-        null, // rootCerts
-        null, // privateKey
-        null, // certChain
-        { checkServerIdentity: () => undefined } // Skip certificate verification
-      )
-    } else {
-      // Standard SSL with certificate verification
-      channelCredentials = grpc.credentials.createSsl()
-    }
-  } else {
-    channelCredentials = grpc.credentials.createInsecure()
-  }
+  const channelCredentials = enableTls ?
+    grpc.credentials.createSsl(null, null, null, { rejectUnauthorized }) :
+    grpc.credentials.createInsecure()
 
   return new this.serviceClient(target, channelCredentials, opts)
 }
