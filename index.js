@@ -63,7 +63,7 @@ ArtilleryGRPCEngine.prototype.getEngineConfig = function () {
     protoLoaderConfig,
     metadata,
     enableTls = false,
-    rejectUnauthorized = false,
+    rejectUnauthorized = true,
   } = this.script.config.engines['grpc-eb']
 
   return {
